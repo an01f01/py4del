@@ -1,0 +1,111 @@
+object FrmMain: TFrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Py4Del'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object MmConsole: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    StyledSettings = [Family, Size, Style]
+    TextSettings.FontColor = claMediumvioletred
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 335.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 636.000000000000000000
+    Viewport.Height = 331.000000000000000000
+  end
+  object MmPyCode: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Bottom
+    Position.Y = 430.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 636.000000000000000000
+    Viewport.Height = 46.000000000000000000
+  end
+  object RctToolbar: TRectangle
+    Align = MostTop
+    Fill.Color = claWhitesmoke
+    Size.Width = 640.000000000000000000
+    Size.Height = 89.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    Stroke.Thickness = 2.000000000000000000
+    object EdtPath: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 489.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object BtnBrowse: TButton
+      Anchors = [akTop, akRight]
+      Position.X = 520.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 104.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Browse...'
+      TextSettings.Trimming = None
+      OnClick = BtnBrowseClick
+    end
+    object BtnRun: TButton
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 51.000000000000000000
+      Size.Width = 104.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Run'
+      TextSettings.Trimming = None
+      OnClick = BtnRunClick
+    end
+    object BtnStop: TButton
+      Enabled = False
+      Position.X = 144.000000000000000000
+      Position.Y = 51.000000000000000000
+      Size.Width = 104.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Stop'
+      TextSettings.Trimming = None
+      OnClick = BtnStopClick
+    end
+  end
+  object Splitter1: TSplitter
+    Align = Bottom
+    Cursor = crVSplit
+    MinSize = 20.000000000000000000
+    Position.Y = 424.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 6.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object PythonEngine1: TPythonEngine
+    Left = 576
+    Top = 121
+  end
+  object PythonModule1: TPythonModule
+    Engine = PythonEngine1
+    OnInitialization = OnPyModuleLoad
+    ModuleName = 'PythonModule1'
+    Errors = <>
+    Left = 576
+    Top = 193
+  end
+end
